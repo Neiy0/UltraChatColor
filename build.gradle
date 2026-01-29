@@ -22,6 +22,10 @@ repositories {
         name = "hytale-release"
         url = uri("https://maven.hytale.com/release")
     }
+
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
 }
 
 dependencies {
@@ -31,7 +35,7 @@ dependencies {
     implementation 'net.kyori:adventure-text-minimessage:4.26.1'
     implementation 'net.kyori:adventure-text-serializer-plain:4.26.1'
 
-    implementation files('libs/adventure-1.0-SNAPSHOT.jar')
+    implementation 'com.github.SuperCrafting:Hytale-Component:1.1'
 }
 
 shadowJar {
