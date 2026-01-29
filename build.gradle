@@ -1,0 +1,48 @@
+plugins{
+    id 'java'
+    id 'java-library'
+    id 'maven-publish'
+    id 'com.gradleup.shadow' version '9.3.1'
+}
+
+group = 'fr.neiyo.hytale'
+version = '1.0-SNAPSHOT'
+
+java {
+    withSourcesJar()
+
+    sourceCompatibility JavaVersion.VERSION_25
+    targetCompatibility JavaVersion.VERSION_25
+}
+
+repositories {
+    mavenCentral()
+
+    maven {
+        name = "hytale-release"
+        url = uri("https://maven.hytale.com/release")
+    }
+}
+
+dependencies {
+    compileOnly 'com.hypixel.hytale:Server:2026.01.28-87d03be09'
+
+    implementation 'net.kyori:adventure-api:4.26.1'
+    implementation 'net.kyori:adventure-text-minimessage:4.26.1'
+    implementation 'net.kyori:adventure-text-serializer-plain:4.26.1'
+
+    implementation files('libs/adventure-1.0-SNAPSHOT.jar')
+}
+
+shadowJar {
+    minimize()
+    relocate 'net.kyori', 'fr.neiyo.hytale.shaded.net.kyori'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+}

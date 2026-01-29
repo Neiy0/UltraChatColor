@@ -1,0 +1,14 @@
+{
+  "Group": "neiyo",
+  "Name": "UltraChatColor",
+  "Version": "1.0.0",
+  "Main": "fr.neiyo.chatcolor.ChatColorPlugin",
+  "Description": "A simple mod to add kyori mini-messages to chat messages.",
+  "Authors": [
+    {
+      "Name": "neiyo"
+    }
+  ],
+  "ServerVersion": "*",
+  "Dependencies": {}
+}
