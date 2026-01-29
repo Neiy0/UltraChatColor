@@ -10,7 +10,7 @@ import pt.supercrafting.hytale.adventure.util.HytaleDirectConverter;
 
 import javax.annotation.Nonnull;
 
-public final class ColorChatEvent {
+public final class ChatColorEvent {
 
     private final PlayerChatEvent.Formatter miniMessageFormatter = (playerRef, msg) -> {
         return Message.join(Message
@@ -20,7 +20,7 @@ public final class ColorChatEvent {
                 HytaleDirectConverter.fromMiniMessage(msg)); // placeholder is broken for message options ¯\_(ツ)_/¯
     };
 
-    public ColorChatEvent(JavaPlugin plugin) {
+    public ChatColorEvent(JavaPlugin plugin) {
         EventRegistry eventRegistry = plugin.getEventRegistry();
         eventRegistry.registerGlobal(PlayerChatEvent.class, this::onPlayerChat);
     }

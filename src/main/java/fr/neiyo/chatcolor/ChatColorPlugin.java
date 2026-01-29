@@ -13,6 +13,6 @@ public class ChatColorPlugin extends JavaPlugin {
 
     @Override
     protected void setup() {
-        new ColorChatEvent(this);
+        new ChatColorEvent(this);
     }
 }
